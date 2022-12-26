@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment homefragment = new HomeFragment();
     KeranjangFragment cartfragment = new KeranjangFragment();
-    AkunFragment akunfragment = new AkunFragment();
+    SettingFragment akunfragment = new SettingFragment();
 
 
     ApiInterface apiInterface;
