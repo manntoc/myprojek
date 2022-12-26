@@ -30,16 +30,14 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    //navbar
     BottomNavigationView bottomNavigationView;
-
     HomeFragment homefragment = new HomeFragment();
     KeranjangFragment cartfragment = new KeranjangFragment();
-    SettingFragment akunfragment = new SettingFragment();
+    AkunFragment akunfragment = new AkunFragment();
 
-
+    //database
     ApiInterface apiInterface;
-
     RecyclerView popularRecyclerView, recommendedRecyclerView, allMenuRecyclerView;
 
     PopularAdapter popularAdapter;
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //navbar
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container,homefragment).commit();
 
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //database
         apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
 
         Call<List<FoodData>> call = apiInterface.getAllData();
@@ -92,15 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 getRecommendedData(foodDataList.get(0).getRecommended());
 
                 getAllMenu(foodDataList.get(0).getAllmenu());
-                // lets run it.
-                // we have fetched data from server.
-                // now we have to show data in app using recycler view
-                // lets make recycler view adapter
-                // we have setup and bind popular section
-                // in a same way we add recommended and all menu items
-                // we add two adapter class for allmenu and recommended items.
-                // so lets do it fast.
-
             }
 
             @Override

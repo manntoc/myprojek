@@ -14,7 +14,7 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login!!"
+        android:text="Login Hoo!!"
         android:textStyle="bold"
         android:textSize="30dp"
         android:gravity="center"
